@@ -16,7 +16,7 @@ var Main = React.createClass({
     return (
       <div>
         <h1>budget</h1>
-        <h3>z
+        
         <DisplayTransactions transactions={this.state.transactions}/>
         <SelectOptions transactions={this.state.transactions}/>
       </div>

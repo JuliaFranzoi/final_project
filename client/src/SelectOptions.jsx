@@ -51,7 +51,10 @@ var SelectOptions = React.createClass({
         <option>Select by Category</option>
         {this.getCategories()}
         </select>
-
+        <select id="value select" onChange={this.handleSecondSelectChange}>
+        <option>Select by value</option>
+        {this.createOptions()}
+        </select>
 
         </div>
       )

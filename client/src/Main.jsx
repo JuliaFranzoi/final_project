@@ -1,6 +1,6 @@
 import React from 'react'
 import DisplayTransactions from './DisplayTransactions'
-import TagSelect from './TagSelect'
+import SelectOptions from './SelectOptions'
 
 
 
@@ -8,18 +8,17 @@ import TagSelect from './TagSelect'
 var Main = React.createClass({
   getInitialState: function(){
     return {transactions :[ 
-  {where: "Freud", value: 5.00, date:"24/03", tag: "supermarket"},
-  {where: "boots", value: 5.00, date:"24/03", tag: "pharmacy"}]
-}
-},
+  {where: "Freud", value: 5.00, date:"24/03", tag: "supermarket"}]}
+  },
+
 
   render: function(){
     return (
       <div>
         <h1>budget</h1>
-        <h3>Display Transactions</h3>
+        <h3>z
         <DisplayTransactions transactions={this.state.transactions}/>
-        <TagSelect transactions={this.state.transactions}/>
+        <SelectOptions transactions={this.state.transactions}/>
       </div>
       );  
   }

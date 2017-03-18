@@ -10,10 +10,14 @@ var TagSelect = React.createClass({
     for(var index in this.props.transactions){
       tagOptions.push(this.props.transactions[index].tag)
     }
+    console.log(tagOptions)
+
+
     var optionTags = tagOptions.map(function(tagOption, index){
-      return(<option valule={tagOption} key={index}>{tagOption}</option>)
+      return(<option value={tagOption} key={index}>{tagOption}</option>)
     })
     this.setState({optionTags});
+    console.log(optionTags)
   },
   handleSelectChange: function(event){
     var selectedTag = event.target.value;
@@ -25,10 +29,10 @@ var TagSelect = React.createClass({
 
   render: function(){
     return(
-      <div id="select">
+      <div id="select-tag">
         <select value={this.state.default} onChange={this.handleSelectChange}>
-        <option value="disabled" disable>Select by Tag</option>
-        {this.state.OptionTags}
+        <option value="disabled" disabled>Select by Tag</option>
+        {this.state.optionTags}
         </select>
         </div>
       )

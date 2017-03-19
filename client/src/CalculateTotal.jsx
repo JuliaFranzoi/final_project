@@ -7,7 +7,7 @@ var CalculateTotal = function(props){
     total+=transaction.value;
 
     return (<div id= "totalDiv">
-      <p key={index}>{total} </p>
+      <p key={index} value={total}>{total}</p>
       </div>
       );
 

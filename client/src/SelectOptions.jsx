@@ -8,26 +8,29 @@ var SelectOptions = React.createClass({
   },
 
   filterButtonClick: function(event){
+    console.log("filter button clicked")
     var filtered = [];
     var value = this.state.tagValue;
-    this.props.transactions.forEach( function(transaction) {
-      if (transaction.tag==value) {
+    var category = this.state.tagCategory;
+    this.props.transactions.forEach(function(transaction) {
+      if (transaction[category] === value) {
         filtered.push(transaction)
       }
     });
-    return filtered
+    console.log(filtered)
+    this.props.filterTransactions(filtered) 
   },
 
 
   handleFirstSelectChange: function(event){
     var tagCategory = event.target.value;
-    this.setState({tagCategory});
+    this.setState({tagCategory: tagCategory});
     
   },
 
  handleSecondSelectChange: function(event){
    var tagValue= event.target.value;
-   this.setState({tagValue});
+   this.setState({tagValue: tagValue});
  }, 
 
  createOptions: function(){
@@ -68,10 +71,7 @@ var SelectOptions = React.createClass({
         {this.createOptions()}
         </select>
 
-        <button onClick={this.questionButtonClick}>filter</button> 
-        <p>{filtered}</p>
-
-
+        <button onClick={this.filterButtonClick}>filter</button> 
 
         </div>
       )

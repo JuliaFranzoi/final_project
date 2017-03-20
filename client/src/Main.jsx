@@ -8,12 +8,12 @@ import CalculateTotal from './CalculateTotal'
 
 var Main = React.createClass({
   getInitialState: function(){
-    return {transactions :[ 
-  {where: "Freud", value: 6.00, date:"24/03", tag: "supermarket"},
-  {where: "boots", value: 7.00, date:"23/03", tag: "pharmacy"},
-  {where: "boots", value: 8.00, date:"23/03", tag: "pharmacy"},
-  {where: "coop", value: 8.00, date:"25/03", tag: "supermarket"},
-  ]}
+    return {transactions: this.props.transactions}
+  },
+
+  filterTransactions: function(filteredTransactions) {
+    console.log(filteredTransactions)
+    this.setState({transactions: filteredTransactions})
   },
 
   render: function(){
@@ -22,7 +22,7 @@ var Main = React.createClass({
         <h1>budget</h1>
         <CalculateTotal transactions={this.state.transactions}/>
         <DisplayTransactions transactions={this.state.transactions}/>
-        <SelectOptions transactions={this.state.transactions}/>
+        <SelectOptions transactions={this.state.transactions} filterTransactions={this.filterTransactions}/>
       </div>
       );  
   }

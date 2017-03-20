@@ -71,13 +71,14 @@ var SelectOptions = React.createClass({
     return(
       <div id="select-tag">
         <button onClick={this.showAllButtonClick}>Show all</button>
+        <br></br>
         <select id="category select" onChange={this.handleFirstSelectChange}>
         <option>Select by Category</option>
         {this.getCategories()}
         </select>
         
-        <select defaultValue="-1"id="value select" onChange={this.handleSecondSelectChange}>
-        <option value="-1">Select by value</option>
+        <select id="value select" onChange={this.handleSecondSelectChange}>
+        <option>Select by value</option>
         {this.createOptions()}
         </select>
 

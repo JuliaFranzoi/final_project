@@ -6,7 +6,7 @@ import CalculateTotal from './CalculateTotal'
 
 var Main = React.createClass({
   getInitialState: function(){
-    return {transactions: [], displayTransactions: []};
+    return { transactions: [], displayTransactions: []};
   },
 
   componentDidMount: function(){
@@ -18,7 +18,6 @@ var Main = React.createClass({
       this.setState({
         transactions: data
       })
-
     }.bind(this)
     request.send()
     // setState
@@ -33,9 +32,11 @@ var Main = React.createClass({
     return (
       <div>
         <h1>CashBoard</h1>
-        <CalculateTotal transactions={this.state.displayTransactions}/>
-        <DisplayTransactions transactions={this.state.displayTransactions}/>
+    
         <SelectOptions transactions={this.state.transactions} displayTransactions={this.displayTransactions}/>
+        <DisplayTransactions transactions={this.state.displayTransactions}/>
+        <CalculateTotal transactions={this.state.displayTransactions}/>
+       
       </div>
       );  
   }

@@ -3,17 +3,32 @@ import React from 'react'
 
 var DisplayTransactions = function(props){
 
-  var displayData = props.transactions.map(function(transaction, index){
-    return (<div id= "transactionDiv">
-      <p key={index}>{transaction.value} {transaction.date} {transaction.tag}</p>
+  if (props.transactions === null) {
+    return (
+      <div>
+        <p>Please make a choice</p>
       </div>
-      );
-  })
-
-  return(
-    <div id="transactionBox">
-      {displayData}
-    </div>
     )
+    
+  } else {
+    var displayData = props.transactions.map(function(transaction, index){
+      return (<div key={index} id= "transactionDiv">
+        <p>{transaction.value} {transaction.date} {transaction.tag}</p>
+        </div>
+        );
+    })
+
+    return (
+      <div id="transactionBox">
+        {displayData}
+      </div>
+    )
+    
+  }
+  
+
+  
+    
+    
 }
 export default DisplayTransactions

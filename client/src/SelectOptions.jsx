@@ -7,6 +7,10 @@ var SelectOptions = React.createClass({
     return{tagCategory: null, tagValue: null}
   },
 
+  showAllButtonClick: function(event) {
+    this.props.displayTransactions(this.props.transactions);
+  },
+
   filterButtonClick: function(event){
     console.log("filter button clicked")
     var filtered = [];
@@ -18,7 +22,7 @@ var SelectOptions = React.createClass({
       }
     });
     console.log(filtered)
-    this.props.filterTransactions(filtered) 
+    this.props.displayTransactions(filtered) 
   },
 
 
@@ -29,7 +33,7 @@ var SelectOptions = React.createClass({
   },
 
  handleSecondSelectChange: function(event){
-   var tagValue= event.target.value;
+   var tagValue = event.target.value;
    this.setState({tagValue: tagValue});
  }, 
 
@@ -59,20 +63,25 @@ var SelectOptions = React.createClass({
 
 
   render: function(){
+    if(this.props.transactions.length === 0) {
+      return (
+        <p>Loading</p>
+      )
+    }
     return(
       <div id="select-tag">
+        <button onClick={this.showAllButtonClick}>Show all</button>
         <select id="category select" onChange={this.handleFirstSelectChange}>
         <option>Select by Category</option>
         {this.getCategories()}
         </select>
         
-        <select id="value select" onChange={this.handleSecondSelectChange}>
-        <option>Select by value</option>
+        <select defaultValue="-1"id="value select" onChange={this.handleSecondSelectChange}>
+        <option value="-1">Select by value</option>
         {this.createOptions()}
         </select>
 
         <button onClick={this.filterButtonClick}>filter</button> 
-
         </div>
       )
   }

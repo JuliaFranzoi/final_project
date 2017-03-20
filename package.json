@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.15.1"
+    "express": "^4.15.1",
+    "mongodb": "^2.2.25"
   },
   "devDependencies": {},
   "description": ""

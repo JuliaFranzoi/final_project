@@ -1,5 +1,5 @@
 import React from 'react'
-import TotalAvailable from './TotalAvailable'
+
 
 
 var CalculateTotal = function(props){
@@ -23,7 +23,7 @@ var CalculateTotal = function(props){
       )
   } else if (props.type === "All") {
     return (
-      <div>
+      <div id="totalDiv">
         <p>Total for all: £{total}</p>
       </div>
     )

@@ -13,7 +13,7 @@ var DisplayTransactions = function(props){
   } else {
     var displayData = props.transactions.map(function(transaction, index){
       return (<div key={index} id= "transactionBox">
-        <p>{transaction.value} {transaction.date} {transaction.tag}</p>
+        <p>£{transaction.value}  {transaction.date}  {transaction.where}  {transaction.tag}</p>
         </div>
         );
     })

@@ -3,6 +3,7 @@ import DisplayTransactions from './DisplayTransactions'
 import SelectOptions from './SelectOptions'
 import CalculateTotal from './CalculateTotal'
 import AddTransaction from './AddTransaction'
+import Budget from './Budget'
 
 
 var Main = React.createClass({
@@ -44,6 +45,8 @@ var Main = React.createClass({
     return (
       <div>
         <h1>CashBoard</h1>
+        <h2>Your Transactions</h2>
+        <Budget transactions={this.state.transactions} />
         <AddTransaction updateTransactions={this.makeRequest}/>
         <SelectOptions transactions={this.state.displayTransactions} displayTransactions={this.displayTransactions} allTransactions={this.showAllTransactions}/>
         <DisplayTransactions transactions={this.state.displayTransactions}/>

@@ -1,8 +1,22 @@
 body{
-    background-color: lightblue;
+    background-image: url(images/WP_20170126_002.jpg);
+    background-size: cover;
 }
 
+h2{
+  margin-right: 30px;
+  margin-left:840px;
+  margin-top: 20px;
+  
+}
+
+
 #select-tag{
+   margin-right: 30px;
+   margin-left:800px;
+   margin-top: 10px;
+   
+  }
 
 }
 
@@ -10,12 +24,38 @@ body{
 #select-options{
   height: 100px;
   width: 100px;
-  border:1px solid black;
-  
+  border:1px solid black; 
 }
-#transactionDiv { 
+
+#totalDiv{
   margin-right: 30px;
   margin-left:800px;
   margin-top: 10px;
   border:1px solid black;
+  background-color: white;
+}
+
+#totalDiv p{
+  margin-left: 10px
+}
+
+
+#transactionDiv { 
+  margin-right: 60px;
+  margin-left:800px;
+  margin-top: 10px;
+  border:1px solid black;
+  background-color: white;
+ }
+ #transactionDiv p {
+  margin-left: 10px;
+ }
+
+
+ #budgetDiv {
+  margin-right: 30px;
+  margin-left:800px;
+  margin-top: 10px;
+  border:1px solid black;
+  background-color: white;
  }

@@ -31,16 +31,19 @@ var AddTransaction = React.createClass({
 
   render:function(){
     return(
-      <div id="addtransactions">
-      <label>Where</label>
+      <div id="addTransactions">
+      <label>Where </label>
       <input type="text" id="name"/>
-      <label>value</label>
+      
+      <label>Value </label>
       <input type="number" id="value"/>
-      <label>date</label>
+     
+      <label>Date </label>
       <input type="text" id="date"/>
-      <label>tag</label>
+      
+      <label>Tag</label>
       <input type="text" id="tag"/>
-    
+      <br></br>
       
       <button onClick={this.handleButtonClick}>Add Transaction</button>
       </div>

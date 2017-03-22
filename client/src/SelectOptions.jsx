@@ -63,18 +63,17 @@ var SelectOptions = React.createClass({
       <div id="select-tag">
         <button onClick={this.showAllButtonClick}>Show all</button>
         <br></br>
-        <select id="category select" onChange={this.handleFirstSelectChange}>
+        <select  onChange={this.handleFirstSelectChange}>
         <option>Select by Category</option>
         <option>tag</option>
         <option>date</option>
         <option>where</option>
         </select>
         
-        <select id="value select" onChange={this.handleSecondSelectChange}>
+        <select  onChange={this.handleSecondSelectChange}>
         <option>Select by value</option>
         {this.createOptions()}
         </select>
-
         <button onClick={this.filterButtonClick}>filter</button> 
         </div>
       )

@@ -23,7 +23,7 @@ app.post('/transactions', function(req, res){
   console.log(req.body);
   var newTransaction = {
     where: req.body.where,
-    value: req.body.value,
+    value: parseFloat(req.body.value),
     date: req.body.date,
     tag: req.body.tag
   }

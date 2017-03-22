@@ -11,7 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.15.1",
-    "mongodb": "^2.2.25"
+    "highcharts": "^5.0.9",
+    "mongodb": "^2.2.25",
+    "react": "^15.4.2",
+    "react-highcharts": "^11.5.0"
   },
   "devDependencies": {
     "body-parser": "^1.17.1"

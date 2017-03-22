@@ -12,14 +12,14 @@ var DisplayTransactions = function(props){
     
   } else {
     var displayData = props.transactions.map(function(transaction, index){
-      return (<div key={index} id= "transactionDiv">
+      return (<div key={index} id= "transactionBox">
         <p>{transaction.value} {transaction.date} {transaction.tag}</p>
         </div>
         );
     })
 
     return (
-      <div id="transactionBox">
+      <div id="transactionDiv">
         {displayData}
       </div>
     )

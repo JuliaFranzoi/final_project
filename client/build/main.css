@@ -1,0 +1,21 @@
+body{
+    background-color: lightblue;
+}
+
+#select-tag{
+
+}
+
+
+#select-options{
+  height: 100px;
+  width: 100px;
+  border:1px solid black;
+  
+}
+#transactionDiv { 
+  margin-right: 30px;
+  margin-left:800px;
+  margin-top: 10px;
+  border:1px solid black;
+ }

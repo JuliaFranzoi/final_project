@@ -8,7 +8,7 @@ var SelectOptions = React.createClass({
   },
 
   showAllButtonClick: function(event) {
-    this.props.displayTransactions(this.props.transactions);
+    this.props.allTransactions()
   },
 
   filterButtonClick: function(event){
@@ -52,15 +52,6 @@ var SelectOptions = React.createClass({
  },
 
 
- getCategories: function(){
-  var properties = Object.keys(this.props.transactions[0]);
-  
-  var propertyOptions = properties.map(function(property, index){return (<option value={property} key={index}>{property}</option>)
-    });
-  console.log('properties', properties)
-  return propertyOptions
- },
-
 
   render: function(){
     if(this.props.transactions.length === 0) {
@@ -74,7 +65,9 @@ var SelectOptions = React.createClass({
         <br></br>
         <select id="category select" onChange={this.handleFirstSelectChange}>
         <option>Select by Category</option>
-        {this.getCategories()}
+        <option>tag</option>
+        <option>date</option>
+        <option>where</option>
         </select>
         
         <select id="value select" onChange={this.handleSecondSelectChange}>

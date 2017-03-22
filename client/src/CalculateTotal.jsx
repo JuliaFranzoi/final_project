@@ -15,14 +15,29 @@ var CalculateTotal = function(props){
 
   })
 
-  return(
-    <div id="totalDiv">
-      <p> Total for Filters Selected</p>
-      {total}
-      <TotalAvailable total={total} />
-
- 
-    </div>
+  if (props.type === "Selected") {
+    return(
+      <div id="totalDiv">
+        <p> Total for Selected: £{total}</p>
+      </div>
+      )
+  } else if (props.type === "All") {
+    return (
+      <div>
+        <p>Total for all: £{total}</p>
+      </div>
     )
+    
+  } else {
+    return(
+      <div>
+        <p>Sorry something went wrong</p>
+      </div>
+    )
+    
+  }
+
+
+  
 }
 export default CalculateTotal
